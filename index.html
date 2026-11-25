@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPC (PDF) → raw do fluxograma</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+<main>
+  <h1>📄 PPC (PDF) → <code>"raw"</code> do fluxograma</h1>
+
+  <section class="panel">
+    <div id="drop" tabindex="0" role="button" aria-label="Escolher o PDF do PPC">
+      Arraste o PDF do PPC aqui ou <b>clique para escolher</b>
+      <div class="note" style="margin-top:6px">O arquivo é lido no seu navegador e não é enviado para nenhum servidor.</div>
+    </div>
+    <input type="file" id="file" accept="application/pdf" hidden>
+
+    <div class="opts">
+      <label>Códigos de extensão (prefixos, separados por vírgula)
+        <input type="text" id="optExt" value="EXT,PRI" size="22">
+      </label>
+      <label>Semestre das optativas
+        <input type="number" id="optSem" value="10" min="1" max="20" style="width:90px">
+      </label>
+      <label class="inl" style="align-self:end"><input type="checkbox" id="optOrdem"> manter a ordem do PDF</label>
+    </div>
+    <div id="status" class="note" style="margin-top:10px" role="status"></div>
+  </section>
+
+  <section class="panel" id="result" hidden>
+    <ul id="avisos"></ul>
+    <textarea id="out" spellcheck="false" aria-label="Resultado"></textarea>
+    <div class="bar">
+      <button class="pri" id="btnCopy">Copiar</button>
+      <button id="btnDown">Baixar .json</button>
+      <button id="btnDebug">Ver texto lido do PDF</button>
+    </div>
+    <pre id="debug" hidden></pre>
+  </section>
+</main>
+
+<!-- pdf.js (versão fixa). Se o CDN estiver bloqueado, baixe os dois arquivos e aponte para eles. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

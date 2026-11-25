@@ -1,0 +1,153 @@
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --line: #334155;
+    --txt: #e2e8f0;
+    --mut: #94a3b8;
+    --pri: #3b82f6;
+    --warn: #f59e0b;
+    --ok: #22c55e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--txt);
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 14px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.note {
+    color: var(--mut);
+    font-size: 13px;
+}
+
+#drop {
+    border: 2px dashed var(--line);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#drop.over {
+    border-color: var(--pri);
+    background: #3b82f622;
+}
+
+.opts {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+label {
+    display: grid;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--mut);
+}
+
+input[type=text],
+input[type=number] {
+    background: var(--bg);
+    color: var(--txt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+label.inl {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+button {
+    background: var(--bg);
+    color: var(--txt);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+button.pri {
+    background: var(--pri);
+    border-color: var(--pri);
+    color: #fff;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+textarea,
+pre {
+    width: 100%;
+    background: var(--bg);
+    color: var(--txt);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px;
+    font: 12px/1.5 ui-monospace, Consolas, monospace;
+}
+
+textarea {
+    min-height: 320px;
+    resize: vertical;
+}
+
+pre {
+    max-height: 260px;
+    overflow: auto;
+    margin: 8px 0 0;
+    white-space: pre-wrap;
+}
+
+.bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+#avisos {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--warn);
+    font-size: 13px;
+}
+
+#status {
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
